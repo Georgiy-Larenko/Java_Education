@@ -2,6 +2,7 @@ package Hwk.Hwk02;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.concurrent.CountDownLatch;
 
 
 
@@ -18,12 +19,23 @@ public class task02 {
             System.out.println("File already exist. Recreate file.");
             Files.delete(file);
             Files.createFile(file);
-            Files.writeString(file, "TEST");
+
+            int count = 1;
+            while (count < 100) {
+                Files.writeString(file, "TEST");
+                count += 1;
+            }
 
             
         } else {
             Files.createFile(file);
             Files.writeString(file, "TEST");
+
+            int count = 1;
+            while (count < 100) {
+                Files.writeString(file, "TEST");
+                count += 1;
+            }
   
         }        
         
