@@ -19,27 +19,32 @@ public class task02 {
             Files.delete(file);
             Files.createFile(file);
 
+            StringBuilder stringBuilder = new StringBuilder();
+        
             int count = 1;
-            while (count < 100) {
-                Files.writeString(file, "TEST");
-                count += 1;
-            }
+            while (count < 101) {
+                stringBuilder.append("TEST\n");
+                count ++;
+                }
+
+            String str = stringBuilder.toString();
+            Files.writeString(file, str);
+        }
 
             
-        } else {
-            Files.createFile(file);
-            Files.writeString(file, "TEST");
-
-            int count = 1;
-            while (count < 100) {
-                Files.writeString(file, "TEST");
-                count += 1;
+        else {
+             Files.createFile(file);
+             StringBuilder stringBuilder = new StringBuilder();
+             int count = 1;
+            while (count < 101) {
+                stringBuilder.append("TEST\n");
+                count ++;
             }
+            String str = stringBuilder.toString();
+            Files.writeString(file, str);
   
         }
         
-        String content = Files.readString(file);
-        System.out.println(content);
         
 }
         
