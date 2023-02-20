@@ -2,7 +2,6 @@ package Hwk.Hwk02;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.concurrent.CountDownLatch;
 
 
 
@@ -37,7 +36,10 @@ public class task02 {
                 count += 1;
             }
   
-        }        
+        }
+        
+        String content = Files.readString(file);
+        System.out.println(content);
         
 }
         
