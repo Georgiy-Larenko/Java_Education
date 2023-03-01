@@ -1,4 +1,4 @@
-package Lecs.Lec_01;
+package Lecs.Lesson_01;
 
 /**
  * program
