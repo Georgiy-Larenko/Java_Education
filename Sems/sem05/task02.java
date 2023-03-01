@@ -33,6 +33,8 @@ public class task02 {
             db.putIfAbsent(string.length(), temp);
         }
 
-        System.out.println(db);
+        for (var item : db.entrySet()) {
+            System.out.printf("[%d: %s]\n", item.getKey(), item.getValue());
+        }
     }
 }
