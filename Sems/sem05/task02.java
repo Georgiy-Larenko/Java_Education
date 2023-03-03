@@ -5,10 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/*
-Взять набор строк, например, "Мороз и солнце день чудесный Еще ты дремлешь друг прелестный Пора красавица проснись"
-Написать метод, который отсортирует эти строки по длине с помощью TreeMap. Строки с одинаковой длиной не должны “потеряться”.
-*/
 
 public class task02 {
     public static void main(String[] args) {
