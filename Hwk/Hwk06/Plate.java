@@ -8,8 +8,9 @@ public class Plate {
         this.food = food;
     }
 
-    public int fillPlate(int x){
-        return food += x;
+    public boolean increaseFood(int x){
+        food = food + x; 
+        return true;
     }
 
     public boolean decreaseFood(int foodToDecrease) {

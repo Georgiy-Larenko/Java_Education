@@ -35,6 +35,7 @@ public class Main {
 
         int fill;
         Scanner sc = new Scanner(System.in);
+        boolean flag = true;
 
         
         Plate plate = new Plate(250);
@@ -45,22 +46,36 @@ public class Main {
         allCats[2] = new Cat("Snowball", 17);
         allCats[2] = new Cat("Tom", 20);
         allCats[3] = new Cat("Gargield", 30);
+        
+        while (flag == true){
+            for (int i = 0; i < allCats.length; i++) {
+                if (allCats[i].appetite < plate.food) {
+                    allCats[i].eat(plate);
+                    // System.out.println(allCats[i]);  
+                    System.out.println("Котик " + allCats[i].name + " покушал!" + " {appetite = " + allCats[i].appetite + ", satiety = " + allCats[i].satiety + "}");
+                    System.out.println("Остаток в мискне: " + plate.food);
+                    Thread.sleep(1000);
 
-        for (int i = 0; i < allCats.length; i++) {
-            if (allCats[i].satiety == false && allCats[i].appetite < plate.food) {
-                allCats[i].eat(plate);
-                Thread.sleep(1000);
-                System.out.println("Котик " + allCats[i].name + " покушал!");
-            } else {
-                System.out.println("Котик " + allCats[i].name + " не поел!");
+                } else {                
+                    System.out.println("Котик " + allCats[i].name + " не поел!");
+                    flag = false; 
+
+                    System.out.println("Сколько корма добавить в миску?");
+                    fill = sc.nextInt();
+                    plate.increaseFood(fill);
+                    System.out.println("Корма в миске: " + plate.food);       
+                    
+                }
                 
             }
+            
         }
-
-        System.out.println("Сколько корма добавить в миску?");
-        fill = sc.nextInt();
-        plate.fillPlate(fill);
-        System.out.println(plate);
+        
+        // System.out.println("Сколько корма добавить в миску?");
+        // fill = sc.nextInt();
+        // plate.increaseFood(fill);
+        // System.out.println("Корма в миске: " + plate.food);
+ 
 
         sc.close();
         
