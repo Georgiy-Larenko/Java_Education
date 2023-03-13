@@ -6,17 +6,17 @@ public class Cat {
     public int appetite;
     public volatile boolean satiety = false;
 
-    public Cat(String name) {
-        this(name, 10);
-//        this.name = name;
-//        this.appetite = 10;
-//        satiety = false;
-    }
+//     public Cat(String name) {
+//         this(name, 10);
+// //        this.name = name;
+// //        this.appetite = 10;
+// //        satiety = false;
+//     }
 
     public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
-//        satiety = false;
+        satiety = false;
 
         Thread backgroundSatietyManagement = new Thread(() -> {
             while (true) {
